@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import "tailwindcss";
+
+
+/* Global pixel art rendering */
+* {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Cursor normal para todo el juego (Flecha Pixel) */
+* {
+    cursor: url('https://unpkg.com/nes.css@2.3.0/assets/cursor-pointer.png'), auto;
+}
+
+/* Cursor para elementos interactivos (Mano Pixel) */
+button, 
+a, 
+input[type="button"],
+[role="button"] {
+    cursor: url('https://unpkg.com/nes.css@2.3.0/assets/cursor-click.png'), pointer !important;
+}
