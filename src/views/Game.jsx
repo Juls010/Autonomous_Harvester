@@ -167,7 +167,7 @@ export default function Game() {
                         textShadow: '4px 4px 0 rgba(5, 83, 12, 0.2)',
                         imageRendering: 'pixelated'
                     }}>
-                    AUTONOMOUS HARVESTER
+                    TINY TILLER
                 </h1>
             </header>
 
