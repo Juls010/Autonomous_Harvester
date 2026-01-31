@@ -2,22 +2,33 @@
 @import "tailwindcss";
 
 
-/* Global pixel art rendering */
 * {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-/* Cursor normal para todo el juego (Flecha Pixel) */
-* {
-    cursor: url('https://unpkg.com/nes.css@2.3.0/assets/cursor-pointer.png'), auto;
+html, body {
+    cursor: url('/cursor/cursor.png') 0 0, auto;
+    min-height: 100vh;
 }
 
-/* Cursor para elementos interactivos (Mano Pixel) */
 button, 
 a, 
+a *, 
 input[type="button"],
 [role="button"] {
-    cursor: url('https://unpkg.com/nes.css@2.3.0/assets/cursor-click.png'), pointer !important;
+    cursor: url('/cursor/hand1.png') 0 0, pointer !important;
+    text-decoration: none !important;
+}
+
+button:active, 
+a:active {
+    cursor: url('/cursor/hand2.png') 0 0, pointer !important;
+}
+
+a:hover {
+    cursor: url('/cursor/hand1.png') 0 0, pointer !important;
 }

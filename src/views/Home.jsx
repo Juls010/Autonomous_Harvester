@@ -9,18 +9,18 @@ export default function Home() {
                 fontFamily: '"VT323", monospace'
             }}
             >
-            <div className="absolute inset-0 opacity-60 blur-[1px]" 
+            <div className="absolute inset-0 opacity-60" 
             style={{
-                backgroundImage: `url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png')`,
+                backgroundImage: `url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: '5% 5%, 95% 10%, 2% 50%, 98% 60%, 10% 90%, 85% 95%, 45% 2%',
                 backgroundSize: '120px, 150px, 100px, 110px, 130px, 140px, 170px',
             }}
         />
 
-        <div className="absolute inset-0" 
+        <div className="absolute inset-0 opacity-80" 
             style={{
-                backgroundImage: `url('/background/Tree.png'), url('/background/Mushrooms.png')`,
+                backgroundImage: `url('/background/tree.png'), url('/background/mushrooms.png')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: '15% 25%, 80% 70%',
                 backgroundSize: '120px, 60px',
@@ -44,7 +44,7 @@ export default function Home() {
                 </h1>
             </header>
 
-            <div className="w-full max-w-[500px] animate-in fade-in slide-in-from-bottom-4 duration-500 mx-auto mt-8">
+            <div className="w-full max-w-[500px] animate-in fade-in slide-in-from-bottom-4 duration-500 mx-auto mt-20">
             
             <div className="bg-[#A68A73] p-6 rounded-2xl border-4 border-[#8C735D] shadow-[0_8px_0_#00000020]">
                 
@@ -80,14 +80,14 @@ export default function Home() {
             </div>
         </div>
         
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-20">
     
         <Link to="/game">
             <button 
-                className="flex items-center justify-center px-12 py-2 bg-[#CB98D6] text-white font-bold rounded-lg 
-                        shadow-[0_6px_0_0_#AA76B8] 
-                        hover:bg-[#BD6DCF]
-                        active:shadow-[0_0px_0_0_#BD6DCF]  
+                className="flex items-center justify-center px-12 py-2 bg-[#CB98D6] text-[#5d3692] font-bold rounded-lg 
+                        shadow-[0_6px_0_0_#9858a9] 
+                        hover:bg-[#b274bf]
+                        active:shadow-[0_0px_0_0_#b274bf]  
                         active:shadow-none 
                         active:translate-y-[6px] 
                         transition-[transform,box-shadow,background-color] 
@@ -101,6 +101,28 @@ export default function Home() {
                 PLAY
             </button>
         </Link>
+
+        <footer className="absolute bottom-4 w-full text-center z-[100] pointer-events-none pb-10">
+                    <div 
+                        style={{ fontFamily: '"VT323", monospace' }}
+                        className="relative inline-block text-[#5a4a3a] text-xl opacity-80 select-none"
+                    >
+                        <span>Created by Julia N.G. — </span>
+                        <span className="border-b border-dotted border-[#5a4a3a]">GitHub</span>
+
+                        <a 
+                            href="https://github.com/Juls010" 
+                            style={{ 
+                                cursor: "url('/cursor/hand1.png'), pointer",
+                                height: '60px', 
+                                top: '-20px' 
+                            }}
+                            className="absolute right-0 w-[60px] pointer-events-auto opacity-0"
+                        >
+                            _
+                        </a>
+                    </div>
+                </footer>
 
         </div>
 

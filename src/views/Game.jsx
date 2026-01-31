@@ -49,9 +49,8 @@ export default function Game() {
         }
         
         switch (upperCommand) {
-            case "MOVE":
+            case "MOVE": {
                 if (!robot) return;
-
                 let { row: mr, col: mc, facing: mf } = robot;
                 let newRow = mr;
                 let newCol = mc;
@@ -75,26 +74,26 @@ export default function Game() {
                     setRobot({ row: newRow, col: newCol, facing: mf });
                 }
                 break;
-
-            case "LEFT":
+            }
+            case "LEFT": {
                 if (!robot) return;
                 const newFacingLeft = DIRECTIONS[(DIRECTIONS.indexOf(robot.facing) + 3) % 4];
                 setRobot({...robot, facing: newFacingLeft});
                 break;
-
-            case "RIGHT":
+            }
+            case "RIGHT": {
                 if (!robot) return;
                 const newFacingRight = DIRECTIONS[(DIRECTIONS.indexOf(robot.facing) + 1) % 4];
                 setRobot({...robot, facing: newFacingRight});
                 break;
-            
-            case "REPORT":
+            }
+            case "REPORT": {
                 if (robot) {
-                    setReport(`${robot.row},${robot.col},${robot.facing}`);
+                    setReport(prev => prev === "" ? `${robot.row},${robot.col},${robot.facing}` : "");
                 }
-                break;
-        }
-        
+            break;
+            }
+        } 
     };
 
     const resetGame = () => {
@@ -106,24 +105,18 @@ export default function Game() {
 
     return (
         
-        <div className="h-screen w-full overflow-hidden p-4 flex flex-col" 
-            style={{ 
-                backgroundColor: '#C0D470',
-                backgroundImage: `url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png'), url('/background/Grass.png')`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: `
-                5% 5%,     /* Top-Left */
-                95% 10%,   /* Top-Right */
-                2% 50%,    /* Middle-Left */
-                98% 60%,   /* Middle-Right */
-                10% 90%,   /* Bottom-Left */
-                85% 95%,   /* Bottom-Right */
-                45% 20%     /* Top-Center (suave) */
-                `,
-                backgroundSize: '120px, 150px, 100px, 110px, 130px, 140px, 170px',
-                backgroundBlendMode: 'soft-light', 
-                imageRendering: 'pixelated'
-            }}>
+        <div className="h-screen w-full overflow-hidden relative flex flex-col p-4" style={{ backgroundColor: '#C0D470' }}>
+    
+            <div 
+                className="absolute inset-0 pointer-events-none opacity-60" 
+                style={{ 
+                    backgroundImage: `url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png')`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: '5% 5%, 95% 10%, 2% 50%, 98% 60%, 10% 90%, 85% 95%',
+                    backgroundSize: '120px, 150px, 100px, 110px, 130px, 140px',
+                    imageRendering: 'pixelated',
+                }}
+            />
 
             <Link to="/" className="group absolute top-4 left-4 z-50">
                 <button className="flex items-center justify-center w-14 h-14 bg-[#8C735D] text-[#FDF5E6] rounded-xl
@@ -144,7 +137,7 @@ export default function Game() {
                             ←
                     </span>
                 </button>
-                <div className="absolute top-full mt-3 left-0 scale-0 group-hover:scale-100 transition-transform duration-200 origin-top">
+                <div className="absolute top-full mt-3 left-0 scale-0 group-hover:scale-100 transition-transform duration-100 origin-top">
                     <div className="bg-[#5D4037] text-[#FDF5E6] text-[20px] px-3 py-1 rounded shadow-lg whitespace-nowrap"
                         style={{ fontFamily: '"VT323", monospace' }}>
                             GO HOME
@@ -156,7 +149,7 @@ export default function Game() {
             <button onClick={resetGame} className="group absolute top-6 right-6 z-50 px-7 py-4 bg-[#8C735D] text-[#FDF5E6] text-xs font-bold rounded-lg shadow-[0_4px_0_0_#5D4037] hover:bg-[#7D5A44] active:shadow-none active:translate-y-[4px] transition-all"
                 style={{ fontFamily: '"VT323", monospace' }}>
 
-                <span className="text-2xl leading-none inline-block transition-transform duration-200 ease-in-out group-hover:rotate-180">↻</span>
+                <span className="text-2xl leading-none inline-block transition-transform duration-800 ease-in-out group-hover:rotate-180">↻</span>
 
                 <div className="absolute top-full mt-3 right-0 scale-0 group-hover:scale-100 transition-transform duration-200 origin-top">
                     <div className="bg-[#5D4037] text-[#FDF5E6] text-[20px] px-4 py-1 rounded shadow-lg whitespace-nowrap">
@@ -181,8 +174,8 @@ export default function Game() {
             <main className="flex-1 flex flex-row  max-w-[1200px] mx-auto w-full items-center justify-center p-4">
                 <div className="w-[450px] flex flex-col gap-6 shrink-0 items-stretch">
                     
-                    <section className="bg-white/20 backdrop-blur-lg p-6 rounded-xl shadow-lg border-4 border-amber-900/20 w-full">
-                        <h3 className="font-bold text-[#5a4a3a] mb-2 tracking-widest" style={{ fontFamily: '"VT323", monospace', fontSize: '2rem', lineHeight: '1' }}>
+                    <section className="bg-[#A68A73] p-6 rounded-xl border-4 border-amber-900/50 w-full shadow-[0_5px_0_0_#5D4037]">
+                        <h3 className="font-bold text-white mb-2 tracking-widest" style={{ fontFamily: '"VT323", monospace', fontSize: '2rem', lineHeight: '1' }}>
                             COMMANDS
                         </h3>
                         <ul className="space-y-2 text-left text-s text-gray-700 font-medium">
@@ -203,9 +196,33 @@ export default function Game() {
                 </div>
             </main>
 
-                <div className="absolute bottom-6 right-6 z-50">
-                    <RobotReport report={report} />
-                </div>
+                {report && (
+                    <div className="absolute bottom-20 right-6 z-50">
+                        <RobotReport report={report} />
+                    </div>
+)}
+
+                <footer className="absolute bottom-4 left-0 right-0 w-full text-center z-[100] pointer-events-none pb-10">
+                    <div 
+                        style={{ fontFamily: '"VT323", monospace' }}
+                        className="relative inline-block text-[#5a4a3a] text-xl opacity-80 select-none"
+                    >
+                        <span>Created by Julia N.G. — </span>
+                        <span className="border-b border-dotted  border-[#5a4a3a]">GitHub</span>
+
+                        <a 
+                            href="https://github.com/Juls010" 
+                            style={{ 
+                                cursor: "url('/cursor/hand1.png'), pointer",
+                                height: '60px', 
+                                top: '-20px' 
+                            }}
+                            className="absolute right-0 w-[60px] pointer-events-auto opacity-0"
+                        >
+                            _
+                        </a>
+                    </div>
+                </footer>
                 
         </div>
     );

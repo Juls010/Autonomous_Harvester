@@ -1,29 +1,29 @@
 export default function Board({ robot, walls, plantedCells = [] }) {
     
     const characterImages = {
-        NORTH: '/objects/caracter_norte.png',
-        SOUTH: '/objects/caracter_abajo.png',
-        EAST: '/objects/caracter_derecha.png',
-        WEST: '/objects/caracter_izquierda.png'
+        NORTH: '/objects/character_up.png',
+        SOUTH: '/objects/character_down.png',
+        EAST: '/objects/character_right.png',
+        WEST: '/objects/character_left.png'
     };
 
     const getTileImage = (row, col) => {
-        if (row === 5 && col === 1) return '/board/superior-izq.png';
-        if (row === 5 && col === 5) return '/board/superio-der.png';
-        if (row === 1 && col === 1) return '/board/inferior-izq.png';
-        if (row === 1 && col === 5) return '/board/inferior-der.png';
+        if (row === 5 && col === 1) return '/board/up_left.png';
+        if (row === 5 && col === 5) return '/board/up_right.png';
+        if (row === 1 && col === 1) return '/board/down_left.png';
+        if (row === 1 && col === 5) return '/board/down_right.png';
         
-        if (row === 5) return '/board/arriba.png';
-        if (row === 1) return '/board/abajo.png';
-        if (col === 1) return '/board/izquierda.png';
-        if (col === 5) return '/board/derecha.png';
+        if (row === 5) return '/board/up.png';
+        if (row === 1) return '/board/down.png';
+        if (col === 1) return '/board/left.png';
+        if (col === 5) return '/board/right.png';
         
-        return '/board/tierra-central.png';
+        return '/board/central.png';
     };
 
     return (
         <div className="flex justify-center items-center p-8 my-8">
-            <div className="inline-block  bg-white/20 backdrop-blur-lg p-4 rounded-xl shadow-2xl border-4 border-amber-900/20">
+            <div className="inline-block bg-white/20 backdrop-blur-lg p-4 rounded-xl border-4 border-amber-900/50 shadow-[0_5px_0_0_#5D4037]">
                 <div className="inline-grid grid-cols-5 gap-0">
                     {[5, 4, 3, 2, 1].map((row) => (
                         <div key={row} className="contents">
@@ -48,12 +48,12 @@ export default function Board({ robot, walls, plantedCells = [] }) {
                                         {hasPlant && !hasWall && (
                                             <div className="absolute inset-0 flex items-center justify-center z-[50] animate-fadeIn">
                                                 <img
-                                                    src="/objects/Plant.png" 
+                                                    src="/objects/plant.png" 
                                                     alt="Plant"
                                                     className="w-12 h-12"
                                                     style={{
                                                         imageRendering: 'pixelated',
-                                                        filter: 'drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3))',
+                                                        filter: 'drop-shadow(2px 4px 0px #2D1B0D)',
                                                     }}
                                                 />
                                             </div>
@@ -64,12 +64,12 @@ export default function Board({ robot, walls, plantedCells = [] }) {
                                                 <div 
                                                     className="w-16 h-16"
                                                     style={{
-                                                        backgroundImage: 'url(/objects/Rock.png)',
+                                                        backgroundImage: 'url(/objects/rock.png)',
                                                         backgroundSize: 'contain',
                                                         backgroundPosition: 'center',
                                                         backgroundRepeat: 'no-repeat',
                                                         imageRendering: 'pixelated',
-                                                        filter: 'drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4))',
+                                                        filter: 'drop-shadow(2px 4px 0px #4d3320)',
                                                     }}
                                                 />
                                             </div>
@@ -89,7 +89,7 @@ export default function Board({ robot, walls, plantedCells = [] }) {
                                             </div>
                                         )}
 
-                                        <div className="absolute bottom-0.5 right-1 text-[10px] text-black/40 font-bold font-mono pointer-events-none z-[2]">
+                                        <div className="absolute bottom-0.5 right-1 text-[10px] text-black/100 font-bold font-mono pointer-events-none z-[2]">
                                             {row},{col}
                                         </div>
                                     </div>
