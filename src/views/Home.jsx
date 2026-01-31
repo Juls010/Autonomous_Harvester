@@ -11,7 +11,7 @@ export default function Home() {
             >
             <div className="absolute inset-0 opacity-60" 
             style={{
-                backgroundImage: `url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png'), url('/background/grass.png')`,
+                backgroundImage: `url('background/grass.png'), url('background/grass.png'), url('background/grass.png'), url('background/grass.png'), url('background/grass.png'), url('background/grass.png')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: '5% 5%, 95% 10%, 2% 50%, 98% 60%, 10% 90%, 85% 95%, 45% 2%',
                 backgroundSize: '120px, 150px, 100px, 110px, 130px, 140px, 170px',
@@ -20,7 +20,7 @@ export default function Home() {
 
         <div className="absolute inset-0 opacity-80" 
             style={{
-                backgroundImage: `url('/background/tree.png'), url('/background/mushrooms.png')`,
+                backgroundImage: `url('background/tree.png'), url('background/mushrooms.png')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: '15% 25%, 80% 70%',
                 backgroundSize: '120px, 60px',
