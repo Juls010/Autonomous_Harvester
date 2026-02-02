@@ -37,7 +37,7 @@ If you want to explore the code or run it on your machine:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/your-user/name--repo.git](https://github.com/your-user/name-repo.git)
+   git clone https://github.com/Juls010/Tiny_Tiller.git
    ```
    
 2. Install the dependencies:
