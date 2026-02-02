@@ -186,7 +186,7 @@ export default function Game() {
                 </h1>
             </header>
 
-            <main className="flex-1 flex flex-col lg:flex-row max-w-[1200px] mx-auto w-full items-center justify-center gap-4 sm:gap-6 p-2 sm:p-4 min-h-0">
+            <main className="flex-1 flex flex-col lg:flex-row max-w-[1200px] mx-auto w-full items-center justify-center gap-4 sm:gap-6 lg:gap-8 p-2 sm:p-4 min-h-0">
 
                 <div className="w-full lg:w-[450px] flex flex-col gap-3 sm:gap-6 shrink-0 z-20">
                     
@@ -207,7 +207,7 @@ export default function Game() {
 
                 </div>
 
-                <div className="flex-1 flex justify-center items-center min-h-0 w-full">
+                <div className="w-full lg:w-auto flex justify-center items-center min-h-0">
                     <Board robot={robot} walls={walls} plantedCells={plantedCells} />
                 </div>
             </main>
