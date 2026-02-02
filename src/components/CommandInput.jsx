@@ -12,7 +12,7 @@ export default function CommandInput({ onCommand }) {
     };
 
     return (
-        <div className="w-full flex flex-col gap-10">
+        <div className="w-full flex flex-col gap-10 z-20">
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4">
                 <input
                     type="text"
@@ -41,7 +41,7 @@ export default function CommandInput({ onCommand }) {
                 </button>
             </form>
 
-            <div className="w-full bg-[#A68A73] p-6 rounded-xl border-4 border-amber-900/50 shadow-[0_5px_0_0_#5D4037]">
+            <div className="w-full z-20 bg-[#A68A73] p-6 rounded-xl border-4 border-amber-900/50 shadow-[0_5px_0_0_#5D4037]">
                 <h3 
                     className="font-bold text-white mb-2 tracking-widest"
                     style={{ fontFamily: '"VT323", monospace', fontSize: '2rem', lineHeight: '1' }}
