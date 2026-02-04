@@ -10,25 +10,7 @@
     -webkit-user-drag: none;
 }
 
-html, body {
-    cursor: url('/cursor/cursor.png') 0 0, auto;
-    min-height: 100vh;
+html, body, button, a, input, .cursor-target {
+    cursor: none !important;
 }
 
-button, 
-a, 
-a *, 
-input[type="button"],
-[role="button"] {
-    cursor: url('/cursor/hand1.png') 0 0, pointer !important;
-    text-decoration: none !important;
-}
-
-button:active, 
-a:active {
-    cursor: url('/cursor/hand2.png') 0 0, pointer !important;
-}
-
-a:hover {
-    cursor: url('/cursor/hand1.png') 0 0, pointer !important;
-}

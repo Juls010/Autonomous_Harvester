@@ -79,7 +79,7 @@ export default function Home() {
 
             <Link to="/game">
                 <button 
-                    className="flex items-center justify-center px-8 sm:px-12 py-1 sm:py-2 bg-[#CB98D6] text-[#5d3692] font-bold rounded-lg 
+                    className="cursor-target flex items-center justify-center px-8 sm:px-12 py-1 sm:py-2 bg-[#CB98D6] text-[#5d3692] font-bold rounded-lg 
                             shadow-[0_4px_0_0_#9858a9] sm:shadow-[0_6px_0_0_#9858a9] 
                             hover:bg-[#b274bf]
                             active:shadow-[0_0px_0_0_#b274bf]  
@@ -108,10 +108,7 @@ export default function Home() {
 
                 <a 
                     href="https://github.com/Juls010" 
-                    style={{ 
-                        cursor: "url('/cursor/hand1.png'), pointer",
-                    }}
-                    className="absolute -right-1 -top-1 w-[80px] h-[30px] pointer-events-auto opacity-0 hover:opacity-100"
+                    className="cursor-target absolute -right-1 -top-1 w-[80px] h-[30px] pointer-events-auto opacity-0 hover:opacity-100"
                 >
                     _
                 </a>

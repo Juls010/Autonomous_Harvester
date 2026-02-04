@@ -135,7 +135,7 @@ export default function Game() {
             />
 
             <Link to="/" className="group absolute top-2 sm:top-4 left-2 sm:left-4 z-50">
-                <button className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#8C735D] text-[#FDF5E6] rounded-xl
+                <button className="cursor-target flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#8C735D] text-[#FDF5E6] rounded-xl
                     border-none
                     shadow-[0_4px_0_0_#5D4037] 
                     hover:bg-[#7D5A44] 
@@ -161,7 +161,7 @@ export default function Game() {
                 </div>
             </Link>
 
-            <button onClick={resetGame} className="group absolute top-2 sm:top-6 right-2 sm:right-6 z-50 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#8C735D] text-[#FDF5E6] font-bold rounded-xl shadow-[0_4px_0_0_#5D4037] hover:bg-[#7D5A44] active:shadow-none active:translate-y-[4px] transition-all"
+            <button onClick={resetGame} className=" cursor-target group absolute top-2 sm:top-6 right-2 sm:right-6 z-50 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#8C735D] text-[#FDF5E6] font-bold rounded-xl shadow-[0_4px_0_0_#5D4037] hover:bg-[#7D5A44] active:shadow-none active:translate-y-[4px] transition-all"
                 style={{ fontFamily: '"VT323", monospace' }}>
 
                 <span className="text-xl sm:text-2xl leading-none inline-block transition-transform duration-800 ease-in-out group-hover:rotate-180">↻</span>
@@ -207,7 +207,7 @@ export default function Game() {
 
                 </div>
 
-                <div className="w-full lg:w-auto flex justify-center items-center min-h-0">
+                <div className="w-full lg:w-auto flex justify-center items-center min-h-0 transform scale-75 sm:scale-90 md:scale-95 lg:scale-100 origin-center">
                     <Board robot={robot} walls={walls} plantedCells={plantedCells} />
                 </div>
             </main>
@@ -218,7 +218,7 @@ export default function Game() {
                 </div>
             )}
 
-            <footer className="relative w-full text-center z-[100] pointer-events-none py-2 flex-shrink-0">
+            <footer className="cursor-target relative w-full text-center z-[100] pointer-events-none py-2 flex-shrink-0">
                 <div 
                     style={{ fontFamily: '"VT323", monospace' }}
                     className="relative inline-block text-[#5a4a3a] text-sm sm:text-base md:text-lg opacity-80 select-none"
@@ -228,10 +228,7 @@ export default function Game() {
 
                     <a 
                         href="https://github.com/Juls010" 
-                        style={{ 
-                            cursor: "url('/cursor/hand1.png'), pointer",
-                        }}
-                        className="absolute -right-1 -top-1 w-[80px] h-[30px] pointer-events-auto opacity-0 hover:opacity-100"
+                        className="cursor-target absolute -right-1 -top-1 w-[80px] h-[30px] pointer-events-auto opacity-0 hover:opacity-100"
                     >
                         _
                     </a>
