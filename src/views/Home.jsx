@@ -108,7 +108,7 @@ export default function Home() {
 
                 <a 
                     href="https://github.com/Juls010" 
-                    className="cursor-target absolute -right-1 -top-1 w-[60px] sm:w-[80px] h-[25px] sm:h-[30px] pointer-events-auto opacity-0 hover:opacity-100"
+                    className="cursor-target absolute -right-1 -top-1 w-[60px] sm:w-[40px] h-[25px] sm:h-[30px] pointer-events-auto opacity-0 hover:opacity-100"
                 >
                     _
                 </a>
